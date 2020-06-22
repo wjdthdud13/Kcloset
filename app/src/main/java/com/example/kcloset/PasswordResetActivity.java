@@ -45,13 +45,13 @@ public class PasswordResetActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
-                        startToast("이메일을 보냈습니다.");
+                        startToast("メールが送信されました。.");
                     }
                 }
             });
 
         } else {
-            startToast("이메일을 입력해 주세요.");
+            startToast("メールアドレスを入力してください");
         }
     }
 

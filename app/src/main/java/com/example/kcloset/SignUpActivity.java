@@ -64,7 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            startToast("회원가입에 성공하였습니다.");
+                            startToast("会員登録が成功しました。");
                             myStartActivity(MainActivity.class);
                         } else {
                             if(task.getException() != null) {
@@ -74,10 +74,10 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 });
             } else {
-                startToast("비밀번호가 일치하지 않습니다.");
+                startToast("パスワードが一致していないです。");
             }
         } else {
-            startToast("이메일 또는 비밀번호를 입력해 주세요.");
+            startToast("メールアドレスまたはパスワードを入力してください。");
         }
     }
 

@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center"
-            android:text="로그인"
+            android:text="ログイン"
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="이메일"
+                android:hint="メールアドレス"
                 android:inputType="textEmailAddress" />
 
             <EditText
@@ -45,20 +45,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="비밀번호"
+                android:hint="パスワード"
                 android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="로그인" />
+                android:text="ログイン" />
 
             <Button
                 android:id="@+id/gotoPasswordResetButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="비밀번호 재설정" />
+                android:text="パスワード再発行" />
         </LinearLayout>
 
     </LinearLayout>

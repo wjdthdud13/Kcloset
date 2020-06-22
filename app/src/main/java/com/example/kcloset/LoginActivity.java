@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
-                        startToast("로그인에 성공하였습니다.");
+                        startToast("ログインしました。");
                         myStartActivity(MainActivity.class);
                     } else {
                         if(task.getException() != null) {
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
         } else {
-            startToast("이메일 또는 비밀번호를 입력해 주세요.");
+            startToast("メールアドレスまたはパスワードを入力してください。");
         }
     }
 

@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         if(user == null) {
             myStartActivity(SignUpActivity.class);
         } else {
-            //myStartActivity(MemberInitActivity.class);
+            myStartActivity(CameraActivity.class); //확인용
 
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             DocumentReference docRef = db.collection("users").document(user.getUid());
@@ -78,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        String str = document.getString("shop_name");
-                        Log.d("#", document.getId() + " => " + str);
-                        shopList.add(str);
+                        String shopName = document.getString("shop_name");
+                        Log.d("#", document.getId() + " => " + shopName);
+                        shopList.add(shopName);
                     }
                     adapter.notifyDataSetChanged();
                 } else {

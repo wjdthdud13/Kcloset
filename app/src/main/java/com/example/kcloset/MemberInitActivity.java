@@ -109,7 +109,7 @@ public class MemberInitActivity extends AppCompatActivity {
                             ActivityCompat.requestPermissions(MemberInitActivity.this,
                                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                                     1);
-                            startToast("권한을 허용해 주세요");
+                            startToast("権限を許可してください。");
                         }
                     }else{
                         myStartActivity(GalleryActivity.class);
@@ -126,7 +126,7 @@ public class MemberInitActivity extends AppCompatActivity {
                 if (grantResults.length > 0  && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     myStartActivity(GalleryActivity.class);
                 } else {
-                    startToast("권한을 허용해 주세요");
+                    startToast("権限を許可してください。");
                 }
             }
         }
@@ -168,7 +168,7 @@ public class MemberInitActivity extends AppCompatActivity {
                                 MemberInfo memberInfo = new MemberInfo(name, phoneNumber, birthDay, address, downloadUri.toString());
                                 uploader(memberInfo);
                             } else {
-                                startToast("회원정보를 보내는데 실패하였습니다.");
+                                startToast("会員情報送信が失敗しました。");
                             }
                         }
                     });
@@ -177,7 +177,7 @@ public class MemberInitActivity extends AppCompatActivity {
                 }
             }
         } else {
-            startToast("회원정보를 입력해주세요.");
+            startToast("会員情報を入力してください。");
         }
     }
 
@@ -187,14 +187,14 @@ public class MemberInitActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        startToast("회원정보 등록을 성공하였습니다.");
+                        startToast("会員情報登録が成功しました。");
                         finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        startToast("회원정보 등록에 실패하였습니다.");
+                        startToast("会員情報登録が失敗しました。");
                         Log.w(TAG, "Error writing document", e);
                     }
                 });

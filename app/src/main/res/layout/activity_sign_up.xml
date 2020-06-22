@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center"
-            android:text="회원가입"
+            android:text="会員登録"
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="이메일"
+                android:hint="メールアドレス"
                 android:inputType="textEmailAddress" />
 
             <EditText
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="비밀번호"
+                android:hint="パスワード"
                 android:inputType="textPassword" />
 
             <EditText
@@ -54,20 +54,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="비밀번호 확인"
+                android:hint="パスワード確認"
                 android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/signUpButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="회원가입" />
+                android:text="会員登録" />
 
             <Button
                 android:id="@+id/gotoLoginButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="로그인" />
+                android:text="ログイン" />
         </LinearLayout>
 
     </LinearLayout>
