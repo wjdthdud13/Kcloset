@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         if(user == null) {
             myStartActivity(SignUpActivity.class);
         } else {
-            myStartActivity(CameraActivity.class); //확인용
+            myStartActivity(MemberInitActivity.class);
+            //myStartActivity(CameraActivity.class); //확인용
 
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             DocumentReference docRef = db.collection("users").document(user.getUid());

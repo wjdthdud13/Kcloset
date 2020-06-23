@@ -70,6 +70,7 @@ public class MemberInitActivity extends AppCompatActivity {
             case 0: {
                 if (resultCode == Activity.RESULT_OK) {
                     profilePath = data.getStringExtra("profilePath");
+                    //Log.e("log:","profilePath"+profilePath);
                     Bitmap bmp = BitmapFactory.decodeFile(profilePath);
                     profileImageView.setImageBitmap(bmp);
                 }
