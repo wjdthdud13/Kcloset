@@ -5,5 +5,5 @@
     android:layout_height="fill_parent"
     android:padding="10dip"
     android:textSize="20dip"
-    android:textStyle="bold" >
+    android:textStyle="bold">
 </TextView>

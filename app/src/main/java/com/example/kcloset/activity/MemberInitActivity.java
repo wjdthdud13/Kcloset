@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.kcloset.MemberInfo;
 import com.example.kcloset.R;
 import com.google.android.gms.tasks.Continuation;
@@ -40,7 +41,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-public class MemberInitActivity extends AppCompatActivity {
+public class MemberInitActivity extends BasicActivity {
     private static final String TAG = "MemberInitActivity";
     private ImageView profileImageView;
     private String profilePath;
@@ -72,9 +73,7 @@ public class MemberInitActivity extends AppCompatActivity {
             case 0: {
                 if (resultCode == Activity.RESULT_OK) {
                     profilePath = data.getStringExtra("profilePath");
-                    //Log.e("log:","profilePath"+profilePath);
-                    Bitmap bmp = BitmapFactory.decodeFile(profilePath);
-                    profileImageView.setImageBitmap(bmp);
+                    Glide.with(this).load(profilePath).centerCrop().override(500).into(profileImageView);
                 }
                 break;
             }
@@ -103,15 +102,13 @@ public class MemberInitActivity extends AppCompatActivity {
                     if (ContextCompat.checkSelfPermission(MemberInitActivity.this,
                             Manifest.permission.READ_EXTERNAL_STORAGE)
                             != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(MemberInitActivity.this,
+                                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                                1);
                         if (ActivityCompat.shouldShowRequestPermissionRationale(MemberInitActivity.this,
                                 Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                            ActivityCompat.requestPermissions(MemberInitActivity.this,
-                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                                    1);
+
                         } else {
-                            ActivityCompat.requestPermissions(MemberInitActivity.this,
-                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                                    1);
                             startToast("権限を許可してください。");
                         }
                     }else{

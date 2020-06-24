@@ -1,9 +1,12 @@
 package com.example.kcloset.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,7 +28,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BasicActivity {
     private static final String TAG = "MainActivity";
 
     private ListView listView;
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if(user == null) {
             myStartActivity(SignUpActivity.class);
         } else {
-            myStartActivity(MemberInitActivity.class);
+            //myStartActivity(MemberInitActivity.class);//멤버 정보 확인
             //myStartActivity(CameraActivity.class); //확인용
 
             FirebaseFirestore db = FirebaseFirestore.getInstance();
