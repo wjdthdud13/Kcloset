@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.kcloset;
+package com.example.kcloset.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
