@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.kcloset.R;
@@ -30,6 +31,7 @@ import java.util.List;
 
 public class MainActivity extends BasicActivity {
     private static final String TAG = "MainActivity";
+    private Button webview_btn;
 
     private ListView listView;
     List shopList = new ArrayList<>();
@@ -39,6 +41,15 @@ public class MainActivity extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        webview_btn = findViewById(R.id.WebView_btn);
+        webview_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),WebViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 

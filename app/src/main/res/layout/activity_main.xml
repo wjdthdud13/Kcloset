@@ -20,6 +20,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:text="ログアウト" />
+
+    <Button
+        android:id="@+id/WebView_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:text="웹뷰띄우기"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_gravity="right"
+        android:textColor="#fff" />
+
     <ListView
         android:id="@+id/shopList"
         android:layout_width="match_parent"
